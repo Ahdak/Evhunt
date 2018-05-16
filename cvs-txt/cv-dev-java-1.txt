@@ -1,0 +1,28 @@
+Amine SILKA
+amine.silka@gmail.com
+00 33 6 12 45 67 09 55
+
+Développeur JAVA confirmé
+
+Expériences
+
+Depuis Janvier 2015, BNP, Paris, France Participation à la conception et au développement de l’application monAPP. Mision : - Développement / Tests unitaires - Support de Production Environnement Technique : Java EE, Spring, Maven, TDD, BDD, Oracle.
+
+
+De Janvier 2014 à Décembre 2016, SGCIB, Paris France
+Rédiger des spécifications de conception externes et internes pour des clients
+Entretenir et mettre à jour les sites Web des clients, au besoin
+Participer à des séances de mentorat hebdomadaires avec les développeurs Web de mon équipe
+Mision :
+Environnement Technique : Java SE, Swing, Maven, PostgreSQL.
+
+Diplome et Etude:
+2013 - Diplôme Ingénieur de l’ENSEIRB-Matmeca
+
+Compétences
+Java SE/EE, SQL, Maven, Spring, Shell.
+
+Langues
+Français : Langue Maternelle
+Anglais : Maitrise
+Allemand : débutant.

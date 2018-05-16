@@ -1,0 +1,23 @@
+Pierre BARBARE
+pierre.barbare@gmail.com
+00 33 6 45 66 78 09 44
+
+Développeur JAVA confirmé
+
+Expériences
+
+Depuis Mars 2016, Natixis Développement d’une nouvelle application Java EE. Mision : - Développement / Tests unitaires - Réaction des specifications Environnement Technique : Java EE, Spring, Maven, TDD, BDD, Oracle.
+
+
+De Janvier 2010 à Mars 2016, Atos, Paris France Développement JAVA sur plusieurs applications Mision : Environnement Technique : Java SE, Swing, Maven, HPQC.
+
+Diplome et Etude:
+2009 - Diplôme Ingénieur de l’ENSEEIHT Toulouse
+
+Compétences
+Java SE/EE, SQL, Maven, Spring, Shell.
+
+Langues
+Français : Langue Maternelle
+Anglais : bilingue
+Espagnol : débutant.
