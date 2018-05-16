@@ -1,0 +1,35 @@
+<form>
+<fieldset>
+  <legend>Information personnelles</legend>
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon label">Nom</span>
+      <input type="text" pInputText [(ngModel)]="resume.lastname" >
+    </div>
+  </div>
+
+  <div class="ui-g-12">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon label">Prenom</span>
+      <input type="text" pInputText [(ngModel)]="resume.firstame" >
+    </div>
+  </div>
+
+  <div class="ui-g-12">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon label">Email</span>
+      <input type="text" pInputText [(ngModel)]="resume.email" >
+    </div>
+  </div>
+  <div class="ui-g-12">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon label">Telephone</span>
+      <input type="text" pInputText [(ngModel)]="resume.phone" >
+    </div>
+  </div>
+</div>
+</fieldset>
+</form>
+
+<button class="btn btn-danger" style="float: right">Valider</button>
