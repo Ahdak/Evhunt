@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.marf.evhunt.model.AvisRh;
+import com.marf.evhunt.model.Candidat;
 import com.marf.evhunt.model.Candidatures;
 import com.marf.evhunt.model.Postes;
+import com.marf.evhunt.service.helper.FileterCandidatHelper;
 
 /**
  * @author ahmeddammak
@@ -30,6 +32,9 @@ public class PostesController {
 
 	@Autowired
 	AvisRhRepository avisRhRepository;
+	
+	@Autowired
+	CandidatRepository candidatRepository;
 
 	@RequestMapping(value = "/findAllPostes", method = RequestMethod.GET, produces = "application/json")
 	public List<Postes> findAllPostes() {
@@ -55,5 +60,12 @@ public class PostesController {
 	public String addAvisRh(@RequestParam(name = "avisRh", required = true) String avisRh, @RequestParam(name = "idCandidat", required = true) long idCandidat,
 			@RequestParam(name = "nomRH", required = true) String nomRH) {
 		return avisRhRepository.storeAvisRh(avisRh, idCandidat, nomRH);
+	}
+	
+	@RequestMapping(value = "/findPostesByCandidat", method = RequestMethod.GET, produces = "application/json")
+	public List<Postes> findPostesByCandidat(@RequestParam(name = "id_candidat", required = true) long id) {
+		Candidat candidat = candidatRepository.findById(id) ;
+		List<Postes> postes = findAllPostes() ;
+		return FileterCandidatHelper.getInstance().filterPostes(postes,candidat) ;
 	}
 }

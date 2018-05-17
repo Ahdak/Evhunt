@@ -13,6 +13,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.marf.evhunt.model.Candidat;
+import com.marf.evhunt.model.Postes;
 
 /**
  * @author ahmeddammak
@@ -47,16 +48,37 @@ public class FileterCandidatHelper {
 		return all.stream().filter(c -> c.getCompetences().toLowerCase().contains(keyword.toLowerCase())).collect(Collectors.toList());
 	}
 
-	private static List<String> buildKeyWords(String keyword) {
+	private List<String> buildKeyWords(String keyword) {
 		String temp = keyword.replaceAll("\\,", " ");
 		temp = temp.replaceAll("\\.", " ");
 		if (!temp.contains(" ")) {
 			return Lists.newArrayList(temp);
 		}
-		return Lists.newArrayList(temp.split(" "));
+		List<String> result = Lists.newArrayList();
+		for (String ss : temp.split(" ")) {
+			if (!ss.isEmpty()) {
+				result.add(ss);
+			}
+		}
+		return result;
 	}
 
-	public static void main(String[] arg) {
-		System.out.println(buildKeyWords("java,oracle"));
+	public List<Postes> filterPostes(List<Postes> postes, Candidat candidat) {
+		List<String> keywords = buildKeyWords(candidat.getCompetences());
+		System.out.println(keywords);
+		Map<String, List<Postes>> posteByKeyword = buildPostes(postes, keywords);
+		Set<Postes> tempSEt = Sets.newHashSet();
+		posteByKeyword.values().forEach(c -> tempSEt.addAll(c));
+		return new ArrayList<>(tempSEt);
+	}
+
+	private Map<String, List<Postes>> buildPostes(List<Postes> all, List<String> keywords) {
+		Map<String, List<Postes>> result = Maps.newHashMap();
+		keywords.stream().forEach(k -> result.put(k, getPosteByKeyword(all, k)));
+		return result;
+	}
+
+	private List<Postes> getPosteByKeyword(List<Postes> all, String keyword) {
+		return all.stream().filter(c -> c.getKeywords().toLowerCase().contains(keyword.toLowerCase())).collect(Collectors.toList());
 	}
 }
