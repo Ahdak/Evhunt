@@ -25,6 +25,8 @@ public class Candidat {
 	private String controleValideRh;
 	private int idSource;
 	private Sources source;
+	private String typeContrat;
+	private String metier;
 
 	/**
 	 * @return the id
@@ -219,6 +221,83 @@ public class Candidat {
 	 */
 	public void setIdSource(int idSource) {
 		this.idSource = idSource;
+	}
+
+	/**
+	 * @return the typeContrat
+	 */
+	public String getTypeContrat() {
+		return typeContrat;
+	}
+
+	/**
+	 * @param typeContrat
+	 *            the typeContrat to set
+	 */
+	public void setTypeContrat(String typeContrat) {
+		this.typeContrat = typeContrat;
+	}
+
+	/**
+	 * @return the metier
+	 */
+	public String getMetier() {
+		return metier;
+	}
+
+	/**
+	 * @param metier
+	 *            the metier to set
+	 */
+	public void setMetier(String metier) {
+		this.metier = metier;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((mail == null) ? 0 : mail.hashCode());
+		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
+		result = prime * result + ((prenom == null) ? 0 : prenom.hashCode());
+		return result;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Candidat other = (Candidat) obj;
+		if (mail == null) {
+			if (other.mail != null)
+				return false;
+		} else if (!mail.equals(other.mail))
+			return false;
+		if (nom == null) {
+			if (other.nom != null)
+				return false;
+		} else if (!nom.equals(other.nom))
+			return false;
+		if (prenom == null) {
+			if (other.prenom != null)
+				return false;
+		} else if (!prenom.equals(other.prenom))
+			return false;
+		return true;
 	}
 
 }

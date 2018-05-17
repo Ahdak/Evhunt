@@ -5,12 +5,14 @@ create table candidat
    nom varchar(255) not null,
    mail varchar(255) not null,
    mobile varchar(255) not null,
-   titre varchar(255) not null,
-   competences varchar(255) not null,
-   etudes varchar(255) not null,
-   langues varchar(255) not null,
-   controle_valide_rh varchar(255) not null,
-   id_source varchar(255) not null,
+   titre varchar(255) ,
+   competences varchar(255) ,
+   etudes varchar(255) ,
+   langues varchar(255) ,
+   controle_valide_rh varchar(255) ,
+   id_source varchar(255) ,
+   type_contrat varchar(255) ,
+   metier varchar(255) ,
    primary key(id)
    --foreign key (id_source) references sources(id)
 );
@@ -59,8 +61,8 @@ create table avis_rh
 (
    id integer not null AUTO_INCREMENT,
    id_candidat int not null,
-   date_avis varchar(255) not null,
-   avis varchar(255) not null,
-   rh_name varchar(255) not null,
+   date_avis varchar(255) ,
+   avis varchar(255) ,
+   rh_name varchar(255) ,
    primary key(id)
 );

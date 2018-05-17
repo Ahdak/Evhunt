@@ -42,4 +42,9 @@ public class CandidatRepository {
 		Integer idMax = jdbcTemplate.queryForObject("select max(id) from candidat", Integer.class);
 		return idMax;
 	}
+
+	public String updateSouhait(long idCanddiat, String typeContrat, String metier) {
+		jdbcTemplate.update("update candidat set type_contrat=?, metier=? where id = ?",typeContrat,metier,idCanddiat);
+		return "Vos souhaits ont ete enregistres";
+	}
 }

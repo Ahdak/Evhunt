@@ -3,6 +3,8 @@
  */
 package com.marf.evhunt;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -40,5 +42,14 @@ public class AvisRhRepository {
 			resut.add(avisR);
 		}
 		return resut;
+	}
+
+	public String storeAvisRh(String avisRh, long idCandidat, String nomRH) {
+		if (nomRH == null) {
+			nomRH = "Marie BERNARD";
+		}
+		String dateAvis = (new SimpleDateFormat("dd MMM YYYY").format(new Date())).toString();
+		jdbcTemplate.update("insert into avis_rh (id_candidat,date_avis,avis,rh_name) values(?,?,?,?)", idCandidat, dateAvis, avisRh, nomRH);
+		return "Votre avis \'" + avisRh + "\' a ete enregistree";
 	}
 }

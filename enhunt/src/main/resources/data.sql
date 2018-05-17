@@ -6,24 +6,24 @@ insert into sources (nom,date_source) values('Journee Porte Ouverte SG','15 Sept
 insert into sources (nom,date_source) values('Forum Mines Paris','22 Janvier 2018');
 
 -- Candidat 1
-insert into candidat (prenom,nom,mail,mobile,titre,competences,etudes,langues,controle_valide_rh,id_source)
+insert into candidat (prenom,nom,mail,mobile,titre,competences,etudes,langues,controle_valide_rh,id_source,type_contrat,metier)
 values('Ahmed', 'DAMMAK','ahmed@dammak.net','00 33 6 40 95 66 65', 'Developpeur Full Stack',
 	'Java SE/EE, SQL, Spring',
 	'2013 - Diplome Ingénieur ENSEIRB',
 	'FR / EN / AR',
-	'VALIDE',3
+	'VALIDE',3,'CDI','DEV'
 	 );
 
 insert into experiences (id_candidat,description) values(1,'Experience 1 ADK');
 insert into experiences (id_candidat,description) values(1,'Experience 2 ADK');
 
 -- Candidat 2
-insert into candidat (prenom,nom,mail,mobile,titre,competences,etudes,langues,controle_valide_rh,id_source)
+insert into candidat (prenom,nom,mail,mobile,titre,competences,etudes,langues,controle_valide_rh,id_source,type_contrat,metier)
 values('Samir', 'LILI','samir.lili@mail.com','00 33 6 22 66 45 01', 'Developpeur Java',
 	'Java SE/EE, HTML, CSS.',
 	'2013 - Diplome Ingénieur ENSEEIHT',
 	'Francais, anglais, espagnol',
-	'EN_ATTENTE',4
+	'EN_ATTENTE',4,'CDI','DEV'
 	 );
 
 insert into experiences (id_candidat,description) values(2,'Experience 1 Samir');

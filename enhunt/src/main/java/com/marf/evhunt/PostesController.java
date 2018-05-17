@@ -50,4 +50,10 @@ public class PostesController {
 	public List<AvisRh> findAvisRhByCandidatId(@RequestParam(name = "id", required = true) long id) {
 		return avisRhRepository.findByIdCandidat(id);
 	}
+
+	@RequestMapping(value = "/addAvisRh", method = RequestMethod.GET, produces = "application/json")
+	public String addAvisRh(@RequestParam(name = "avisRh", required = true) String avisRh, @RequestParam(name = "idCandidat", required = true) long idCandidat,
+			@RequestParam(name = "nomRH", required = true) String nomRH) {
+		return avisRhRepository.storeAvisRh(avisRh, idCandidat, nomRH);
+	}
 }
