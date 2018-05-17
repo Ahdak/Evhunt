@@ -44,7 +44,12 @@ public class CandidatRepository {
 	}
 
 	public String updateSouhait(long idCanddiat, String typeContrat, String metier) {
-		jdbcTemplate.update("update candidat set type_contrat=?, metier=? where id = ?",typeContrat,metier,idCanddiat);
+		jdbcTemplate.update("update candidat set type_contrat=?, metier=? where id = ?", typeContrat, metier, idCanddiat);
 		return "Vos souhaits ont ete enregistres";
+	}
+
+	public String validerControleRh(long idCanddiat) {
+		jdbcTemplate.update("update candidat set controle_valide_rh=? where id = ?", "VALIDE", idCanddiat);
+		return "Le CV du candidat est valide";
 	}
 }

@@ -98,4 +98,8 @@ public class CandidatController {
 		return candidatRepository.updateSouhait(idCanddiat, typeContrat, metier);
 	}
 
+	@RequestMapping(value = "/validerControleRh", method = RequestMethod.GET, produces = "application/json")
+	public String validerControleRh(@RequestParam(name = "id_candidat", required = true) long idCanddiat) {
+		return candidatRepository.validerControleRh(idCanddiat);
+	}
 }
