@@ -30,20 +30,20 @@ insert into experiences (id_candidat,description) values(2,'Experience 1 Samir')
 insert into experiences (id_candidat,description) values(2,'Experience 2 Samir');
 
 --- Postes 1 Developpeur
-insert into postes (nom_manager,description,titre,keywords,etat,date_poste,departement)
-values('Manager 1', 'Participer au developpement des applications de finance de marche','Developpeur JAVA Confirme','Java, Spring, Oracle','OUVERT','Janvier 2018', 'ITEC/FRM/CEQ');
+insert into postes (nom_manager,description,titre,keywords,etat,date_poste,departement,type_contrat,metier)
+values('Manager 1', 'Participer au developpement des applications de finance de marche','Developpeur JAVA Confirme','Java, Spring, Oracle','OUVERT','Janvier 2018', 'ITEC/FRM/CEQ','CDI','DEV');
 
 -- Poste 2 BA
-insert into postes (nom_manager,description,titre,keywords,etat,date_poste,departement)
-values('Manager 1', 'Analyse du Pnl et des Analyses Risk','BA Junior','Pnl, risk','OUVERT','Janvier 2018','ITEC/FRM/CEQ');
+insert into postes (nom_manager,description,titre,keywords,etat,date_poste,departement,type_contrat,metier)
+values('Manager 1', 'Analyse du Pnl et des Analyses Risk','BA Junior','Pnl, risk','OUVERT','Janvier 2018','ITEC/FRM/CEQ','CDI','BA');
 
 --- Postes 3 Developpeur
-insert into postes (nom_manager,description,titre,keywords,etat,date_poste,departement)
-values('Manager 1', 'Participer au developpement des applications Web et des Web Service','Developpeur JAVA WEB','Java, HTML, Spring','OUVERT','Janvier 2018', 'ITEC/FRM/CRE');
+insert into postes (nom_manager,description,titre,keywords,etat,date_poste,departement,type_contrat,metier)
+values('Manager 1', 'Participer au developpement des applications Web et des Web Service','Developpeur JAVA WEB','Java, HTML, Spring','OUVERT','Janvier 2018', 'ITEC/FRM/CRE','CDD','DEV');
 
 -- Candidatures
-insert into candidatures (id_candidat,id_poste,etat,type_contrat,metier)
-values(1, 1,'ENTRETIEN_MANAGER','CDI','DEV');
+insert into candidatures (id_candidat,id_poste,etat)
+values(1, 1,'ENTRETIEN_MANAGER');
 
 -- Avis RH
 insert into avis_rh (id_candidat,date_avis,avis,rh_name) values(1, '25 Janvier 2018','Excellent','RH 1');

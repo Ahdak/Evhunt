@@ -41,6 +41,8 @@ create table postes
    etat varchar(255) not null,
    date_poste varchar(255),
    departement varchar(255),
+   type_contrat varchar(255) not null,
+   metier varchar(255) not null,
    primary key(id)
 );
 
@@ -50,8 +52,6 @@ create table candidatures
    id_candidat int not null,
    id_poste int not null, 
    etat varchar(255) not null,
-   type_contrat varchar(255) not null,
-   metier varchar(255) not null,
    primary key(id)
 );
 

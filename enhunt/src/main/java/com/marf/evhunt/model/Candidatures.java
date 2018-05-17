@@ -13,8 +13,6 @@ public class Candidatures {
 	private long idCandidat;
 	private long idPoste;
 	private String etat;
-	private String typeContrat;
-	private String metier;
 
 	/**
 	 * @return the id
@@ -74,36 +72,6 @@ public class Candidatures {
 	 */
 	public void setEtat(String etat) {
 		this.etat = etat;
-	}
-
-	/**
-	 * @return the typeContrat
-	 */
-	public String getTypeContrat() {
-		return typeContrat;
-	}
-
-	/**
-	 * @param typeContrat
-	 *            the typeContrat to set
-	 */
-	public void setTypeContrat(String typeContrat) {
-		this.typeContrat = typeContrat;
-	}
-
-	/**
-	 * @return the metier
-	 */
-	public String getMetier() {
-		return metier;
-	}
-
-	/**
-	 * @param metier
-	 *            the metier to set
-	 */
-	public void setMetier(String metier) {
-		this.metier = metier;
 	}
 
 }

@@ -17,6 +17,8 @@ public class Postes {
 	private String etat;
 	private String datePoste;
 	private String departement;
+	private String typeContrat;
+	private String metier;
 
 	/**
 	 * @return the id
@@ -136,6 +138,36 @@ public class Postes {
 	 */
 	public void setDepartement(String departement) {
 		this.departement = departement;
+	}
+
+	/**
+	 * @return the typeContrat
+	 */
+	public String getTypeContrat() {
+		return typeContrat;
+	}
+
+	/**
+	 * @param typeContrat
+	 *            the typeContrat to set
+	 */
+	public void setTypeContrat(String typeContrat) {
+		this.typeContrat = typeContrat;
+	}
+
+	/**
+	 * @return the metier
+	 */
+	public String getMetier() {
+		return metier;
+	}
+
+	/**
+	 * @param metier
+	 *            the metier to set
+	 */
+	public void setMetier(String metier) {
+		this.metier = metier;
 	}
 
 }

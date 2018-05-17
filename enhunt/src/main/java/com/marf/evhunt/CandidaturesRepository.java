@@ -36,8 +36,6 @@ public class CandidaturesRepository {
 			cand.setIdCandidat((int) row.get("id_candidat"));
 			cand.setIdPoste((int) row.get("id_poste"));
 			cand.setEtat((String) row.get("etat"));
-			cand.setMetier((String) row.get("metier"));
-			cand.setTypeContrat((String) row.get("type_contrat"));
 			resut.add(cand);
 		}
 		return resut;
