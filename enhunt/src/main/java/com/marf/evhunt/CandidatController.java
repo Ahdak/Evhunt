@@ -16,6 +16,8 @@ import com.marf.evhunt.model.Candidat;
 import com.marf.evhunt.model.Experience;
 import com.marf.evhunt.model.Sources;
 import com.marf.evhunt.service.helper.WatsonServiceHelper;
+import com.marf.evhunt.workflow.model.StoreCandidatResponse;
+import com.marf.evhunt.workflow.service.StoreCandidatService;
 
 /**
  * @author ahmeddammak
@@ -67,6 +69,14 @@ public class CandidatController {
 	private void updateSource(Candidat candidat) {
 		List<Sources> sources = sourcesRepository.findAll();
 		candidat.setSource(sources.stream().filter(s -> s.getId() == candidat.getIdSource()).findFirst().orElse(Sources.DEFAULT));
+	}
+
+	@RequestMapping(value = "/storeCandidat", method = RequestMethod.GET, produces = "application/json")
+	public StoreCandidatResponse storeCandidat(@RequestParam(name = "id_source", required = true) int idSource, @RequestParam(name = "cv", required = true) String cv) {
+		Candidat candidat = watsonServiceHelper.parseCv(cv);
+		candidatRepository.store(candidat, idSource);
+		experienceRepository.store(candidat);
+		return StoreCandidatService.getInstance().buildResponse(candidat);
 	}
 
 }

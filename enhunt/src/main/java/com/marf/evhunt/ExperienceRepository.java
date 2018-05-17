@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.google.common.collect.Lists;
+import com.marf.evhunt.model.Candidat;
 import com.marf.evhunt.model.Experience;
 
 /**
@@ -37,4 +38,9 @@ public class ExperienceRepository {
 		}
 		return resut;
 	}
+
+	public void store(Candidat candidat) {
+		candidat.getExperiences().forEach(exp -> jdbcTemplate.update("insert into experiences (id_candidat,description) values(?,?)", candidat.getId(), exp));
+	}
+
 }
