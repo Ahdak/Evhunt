@@ -31,10 +31,15 @@ insert into experiences (id_candidat,description) values(2,'Experience 2 Samir')
 
 --- Postes 1 Developpeur
 insert into postes (nom_manager,description,titre,keywords,etat,date_poste,departement)
-values('Manager 1', 'Description du poste Developpeur','Developpeur JAVA Confirme','Java, Spring, Oracle','OUVERT','Janvier 2018', 'ITEC/FRM/CEQ');
+values('Manager 1', 'Participer au developpement des applications de finance de marche','Developpeur JAVA Confirme','Java, Spring, Oracle','OUVERT','Janvier 2018', 'ITEC/FRM/CEQ');
 
+-- Poste 2 BA
 insert into postes (nom_manager,description,titre,keywords,etat,date_poste,departement)
-values('Manager 1', 'Description du poste BA','BA Junior','Pnl, risk','OUVERT','Janvier 2018','ITEC/FRM/CRE');
+values('Manager 1', 'Analyse du Pnl et des Analyses Risk','BA Junior','Pnl, risk','OUVERT','Janvier 2018','ITEC/FRM/CEQ');
+
+--- Postes 3 Developpeur
+insert into postes (nom_manager,description,titre,keywords,etat,date_poste,departement)
+values('Manager 1', 'Participer au developpement des applications Web et des Web Service','Developpeur JAVA WEB','Java, HTML, Spring','OUVERT','Janvier 2018', 'ITEC/FRM/CRE');
 
 -- Candidatures
 insert into candidatures (id_candidat,id_poste,etat,type_contrat,metier)

@@ -19,7 +19,7 @@ create table experiences
 (
    id integer not null AUTO_INCREMENT,
    id_candidat int not null,
-   description varchar(255) not null,
+   description varchar(2048) not null,
    primary key(id)
 );
 
