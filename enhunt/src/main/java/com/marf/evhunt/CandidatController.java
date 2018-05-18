@@ -17,6 +17,7 @@ import com.marf.evhunt.model.Experience;
 import com.marf.evhunt.model.Postes;
 import com.marf.evhunt.model.Sources;
 import com.marf.evhunt.service.helper.FileterCandidatHelper;
+import com.marf.evhunt.service.helper.PdfParser;
 import com.marf.evhunt.service.helper.WatsonServiceHelper;
 import com.marf.evhunt.workflow.model.StoreCandidatResponse;
 import com.marf.evhunt.workflow.service.StoreCandidatService;
@@ -48,6 +49,16 @@ public class CandidatController {
 	@RequestMapping(value = "/parseCv", method = RequestMethod.GET, produces = "application/json")
 	public Candidat parseCv(@RequestParam(name = "cv", required = true) String cv) {
 		return watsonServiceHelper.parseCv(cv);
+	}
+	
+	@RequestMapping(value = "/parseFile", method = RequestMethod.GET, produces = "application/json")
+	public Candidat parseFile(@RequestParam(name = "path", required = true) String filePath) {
+		java.util.Optional<String> cv = PdfParser.getTextFromPdf(filePath) ;
+		if (cv.isPresent()) {
+			return watsonServiceHelper.parseCv(cv.get());
+		} else {
+			return candidatRepository.findById(2) ;
+		}
 	}
 
 	@RequestMapping(value = "/findCandidatById", method = RequestMethod.GET, produces = "application/json")
