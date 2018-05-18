@@ -48,7 +48,12 @@ public class PostesController {
 
 	@RequestMapping(value = "/findCandidatureByCandidatId", method = RequestMethod.GET, produces = "application/json")
 	public List<Candidatures> findCandidatureByCandidatId(@RequestParam(name = "id", required = true) long id) {
-		return candidaturesRepository.findByIdCandidat(id);
+		List<Candidatures> candiatures = candidaturesRepository.findByIdCandidat(id);
+		for (Candidatures cc : candiatures) {
+			Postes p = posteRepository.findById(cc.getIdPoste());
+			cc.setNomPoste(p.getDescription());
+		}
+		return candiatures;
 	}
 
 	@RequestMapping(value = "/findAvisRhByCandidatId", method = RequestMethod.GET, produces = "application/json")

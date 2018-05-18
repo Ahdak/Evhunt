@@ -13,6 +13,7 @@ public class Candidatures {
 	private long idCandidat;
 	private long idPoste;
 	private String etat;
+	private String nomPoste;
 
 	/**
 	 * @return the id
@@ -72,6 +73,21 @@ public class Candidatures {
 	 */
 	public void setEtat(String etat) {
 		this.etat = etat;
+	}
+
+	/**
+	 * @return the nomPoste
+	 */
+	public String getNomPoste() {
+		return nomPoste;
+	}
+
+	/**
+	 * @param nomPoste
+	 *            the nomPoste to set
+	 */
+	public void setNomPoste(String nomPoste) {
+		this.nomPoste = nomPoste;
 	}
 
 }
