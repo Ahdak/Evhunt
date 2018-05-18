@@ -45,4 +45,8 @@ public class CandidaturesRepository {
 		List<Map<String, Object>> rows = jdbcTemplate.queryForList("select * from candidatures where id_poste=?", new Object[] { id });
 		return buildCandidatures(rows);
 	}
+
+	public void ajouterCandidature(long idCandidat, long idPoste, String statut) {
+		jdbcTemplate.update("insert into candidatures (id_candidat,id_poste,etat) values(?,?,?);", idCandidat, idPoste, statut);
+	}
 }

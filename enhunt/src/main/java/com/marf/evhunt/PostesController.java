@@ -32,7 +32,7 @@ public class PostesController {
 
 	@Autowired
 	AvisRhRepository avisRhRepository;
-	
+
 	@Autowired
 	CandidatRepository candidatRepository;
 
@@ -61,11 +61,19 @@ public class PostesController {
 			@RequestParam(name = "nomRH", required = true) String nomRH) {
 		return avisRhRepository.storeAvisRh(avisRh, idCandidat, nomRH);
 	}
-	
+
 	@RequestMapping(value = "/findPostesByCandidat", method = RequestMethod.GET, produces = "application/json")
 	public List<Postes> findPostesByCandidat(@RequestParam(name = "id_candidat", required = true) long id) {
-		Candidat candidat = candidatRepository.findById(id) ;
-		List<Postes> postes = findAllPostes() ;
-		return FileterCandidatHelper.getInstance().filterPostes(postes,candidat) ;
+		Candidat candidat = candidatRepository.findById(id);
+		List<Postes> postes = findAllPostes();
+		return FileterCandidatHelper.getInstance().filterPostes(postes, candidat);
 	}
+
+	@RequestMapping(value = "/ajouterCandidature", method = RequestMethod.GET, produces = "application/json")
+	public String ajouterCandidature(@RequestParam(name = "id_candidat", required = true) long idCandidat, @RequestParam(name = "id_poste", required = true) long idPoste) {
+		String initialStatus = "POSTULE";
+		candidaturesRepository.ajouterCandidature(idCandidat, idPoste, initialStatus);
+		return "Votre candidature a ete enregistre";
+	}
+
 }
