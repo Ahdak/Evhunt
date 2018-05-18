@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.marf.evhunt.model.Candidat;
 import com.marf.evhunt.model.Experience;
+import com.marf.evhunt.model.Postes;
 import com.marf.evhunt.model.Sources;
 import com.marf.evhunt.service.helper.FileterCandidatHelper;
 import com.marf.evhunt.service.helper.WatsonServiceHelper;
@@ -40,6 +41,9 @@ public class CandidatController {
 
 	@Autowired
 	AvisRhRepository avisRHRepository;
+
+	@Autowired
+	PostesRepository posteRepository;
 
 	@RequestMapping(value = "/parseCv", method = RequestMethod.GET, produces = "application/json")
 	public Candidat parseCv(@RequestParam(name = "cv", required = true) String cv) {
@@ -90,6 +94,12 @@ public class CandidatController {
 	@RequestMapping(value = "/filterCandidats", method = RequestMethod.GET, produces = "application/json")
 	public List<Candidat> findAllCandidats(@RequestParam(name = "keywords", required = true) String keywords) {
 		return FileterCandidatHelper.getInstance().filter(findAllCandidats(), keywords);
+	}
+
+	@RequestMapping(value = "/filterCandidatsByPosteId", method = RequestMethod.GET, produces = "application/json")
+	public List<Candidat> filterCandidatsByPosteId(@RequestParam(name = "id_poste", required = true) int idPoste) {
+		Postes poste = posteRepository.findById(idPoste);
+		return FileterCandidatHelper.getInstance().filter(findAllCandidats(), poste.getKeywords());
 	}
 
 	@RequestMapping(value = "/updateSouhait", method = RequestMethod.GET, produces = "application/json")
